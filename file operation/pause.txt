@@ -1,0 +1,2 @@
+system("pause");/此行代码在前面/
+    return 0;
