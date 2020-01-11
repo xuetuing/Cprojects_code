@@ -11,8 +11,8 @@
 
 main()
 { 
-  struct role *lianbiao=NULL;
-  char ch,xingming[6];
+  struct role *linkedList=NULL;
+  char ch,name[6];
   int n,m,sum=0;
   //int flag=0;
   //int getsqlnum=0;
@@ -41,29 +41,29 @@ main()
 	   switch(ch)
 	 {
 		 case'A': printf("您正在创建信息记录！\n"); //录入信息
-			      lianbiao=creat(&sum);    //此函数需要有防止重复的功能
-                  printlianbiao(lianbiao,&sum);
+			      linkedList=creat(&sum);    //此函数需要有防止重复的功能
+                  printlianbiao(linkedList,&sum);
                   display2();
                   printf("请选择操作种类->");
 				  break;
-		 case'B': lianbiao=insert(lianbiao,&sum);   //增加数据
+		 case'B': linkedList=insert(linkedList,&sum);   //增加数据
 			      printf("插入后的新记录如下：\n");
-			      printlianbiao(lianbiao,&sum);
+			      printlianbiao(linkedList,&sum);
 				  display2();
 				  printf("请选择操作种类->");
 				  break;
 		 case'C': printf("请输入你要更改的记录。\n"); //修改数据，需要其他方式
-			      modify(lianbiao);
-			      printlianbiao(lianbiao,&sum);
+			      modify(linkedList);
+			      printlianbiao(linkedList,&sum);
 				  display2();
 				  printf("请选择操作种类->");
 				  break;
 		 case'D': printf("请输入你要删除的记录。\n");  // 删除数据
 			      printf("请输入编号->");
 				  scanf("%d",&n);
-			      lianbiao=del(lianbiao,n,&sum);
+			      linkedList=del(linkedList,n,&sum);
 				  printf("删除后链表如下！\n");
-			      printlianbiao(lianbiao,&sum);
+			      printlianbiao(linkedList,&sum);
 				  display2();
                   printf("请选择操作种类->");
 				  break;
@@ -73,25 +73,25 @@ main()
 				  {
 					printf("请输入学号->");
 					scanf("%d",&n);
-			        search_id(lianbiao,n);
+			        search_id(linkedList,n);
 			        display2();
 				  }
 				  if(m == 1)
 				  {
 					printf("请输入姓名->");
-					scanf("%s",&xingming);
-			        search_name(lianbiao,xingming);  //
+					scanf("%s",&name);
+			        search_name(linkedList,name);  //
 			        display2();
 				  }				  
                   printf("请选择操作种类->");
 			      break;
 		 case'F': printf("程序列表！\n");           //显示信息
-			      printlianbiao(lianbiao,&sum);
+			      printlianbiao(linkedList,&sum);
 			      display2();
                   printf("请选择操作种类->");
 			      break;
 		 case'G': printf("\n");                    //保存
-                  SaveTopc(lianbiao,&sum);
+                  SaveTopc(linkedList,&sum);
 				  display2();
                   printf("请选择操作种类->");
 			      break;
@@ -101,9 +101,9 @@ main()
                   printf("请选择操作种类->");
 			      break;
 		 case'M': printf("\n");                    // 读入数据
-			      lianbiao=Diaorudata(&sum);
+			      linkedList=Diaorudata(&sum);
 				  printf("数据文件内容如下；\n\n");
-				  printlianbiao(lianbiao,&sum);
+				  printlianbiao(linkedList,&sum);
 				  display2();
                   printf("请选择操作种类->");
 			      break;
