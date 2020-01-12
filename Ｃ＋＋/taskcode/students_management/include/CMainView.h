@@ -6,38 +6,38 @@
 #include <string>
 #include "CStudent.h"
 #include "CStudentMg.h"
- 
+
 class CMainView
 {
 public:
 	CMainView();
 	~CMainView();
  
-	/* »¶Ó­ */
+	/* æ¬¢è¿ */
 	void welcome();
  
-	/* ÏÔÊ¾²Ëµ¥ */
+	/* æ˜¾ç¤ºèœå• */
 	void showMenu();
  
-	/* view ÏÔÊ¾ËùÓĞÑ§Éú */
+	/* view æ˜¾ç¤ºæ‰€æœ‰å­¦ç”Ÿ */
 	void showAllStuAtView(const std::map<int, CStudent> & stu_m1);
  
-	/* view²ã Ìí¼ÓÒ»¸öÑ§Éú */
+	/* viewå±‚ æ·»åŠ ä¸€ä¸ªå­¦ç”Ÿ */
 	void addStuAtView( std::map<int, CStudent> & stu_m1 );
  
-	/* view ²éÕÒÒ»¸öÑ§Éú */
+	/* view æŸ¥æ‰¾ä¸€ä¸ªå­¦ç”Ÿ */
 	void findStuAtView(const std::map<int, CStudent> & m1) ;
  
-	/* view²ãÉ¾³ıÒ»¸öÑ§Éú */
+	/* viewå±‚åˆ é™¤ä¸€ä¸ªå­¦ç”Ÿ */
 	void deleteByIdAtView(std::map<int, CStudent> & v1);
  
-	/* view²ã ¸üĞÂÒ»¸öÑ§Éú */
+	/* viewå±‚ æ›´æ–°ä¸€ä¸ªå­¦ç”Ÿ */
 	void updateByIdAtView(std::map<int, CStudent> & m1);
  
-	/* view²ã °Ñmap±£´æ½øÎÄ¼ş */
+	/* viewå±‚ æŠŠmapä¿å­˜è¿›æ–‡ä»¶ */
 	void saveToFileAtView(const std::map<int, CStudent> & m1, std::string pathName);
  
-	/* view²ã °ÑÎÄ¼şÖĞµÄ¶«Î÷µ¼Èë map */
+	/* viewå±‚ æŠŠæ–‡ä»¶ä¸­çš„ä¸œè¥¿å¯¼å…¥ map */
 	void readFromFileAtView(std::map<int, CStudent> & m, std::string pathName);
  
 private:

@@ -23,25 +23,25 @@ int main() {
  
 	while (operateType!="0")
 	{
-		if (operateType=="1") {// Â¼Èë
+		if (operateType=="1") {// å½•å…¥
 			cView.addStuAtView(stu_v1);
 		}
-		else if(operateType=="2") { // ĞŞ¸Ä
+		else if(operateType=="2") { // ä¿®æ”¹
 			cView.updateByIdAtView(stu_v1);
 		}
-		else if(operateType=="3") { // ²éÕÒ
+		else if(operateType=="3") { // æŸ¥æ‰¾
 			cView.findStuAtView(stu_v1);
 		}
 		else if (operateType=="4") {
 			cView.deleteByIdAtView(stu_v1);
 		}
-		else if( operateType == "5") { // ÏÔÊ¾ËùÓĞ
+		else if( operateType == "5") { // æ˜¾ç¤ºæ‰€æœ‰
 			cView.showAllStuAtView(stu_v1);
 		}
-		else if( operateType=="6") {  // ±£´æÖÁÎÄ¼ş
+		else if( operateType=="6") {  // ä¿å­˜è‡³æ–‡ä»¶
 			cView.saveToFileAtView(stu_v1,pathName);
 		}
-		else if(operateType=="7") {// ´ÓÎÄ¼ş¶ÁÈ¡
+		else if(operateType=="7") {// ä»æ–‡ä»¶è¯»å–
 			cView.readFromFileAtView(stu_v1,pathName);
 		}
 		else {

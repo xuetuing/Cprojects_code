@@ -3,7 +3,7 @@
 #include "CStudent.h"
 using namespace std;
  
-// Ñ§ÉúÄ¬ÈÏidÊÇ-1£¬ËµÃ÷ÕâÔİÊ±ÊÇÒ»¸öÎŞĞ§µÄÑ§Éú¡£
+// å­¦ç”Ÿé»˜è®¤idæ˜¯-1ï¼Œè¯´æ˜è¿™æš‚æ—¶æ˜¯ä¸€ä¸ªæ— æ•ˆçš„å­¦ç”Ÿã€‚
 CStudent::CStudent(){this->id = -1;}
 CStudent::~CStudent(){}
  
@@ -21,8 +21,8 @@ void CStudent:: setAge(int val) { age = val; }
  
 std::ostream & operator<<(std::ostream & os, CStudent & stu) {
  
-	// ±£´æµÄÊ±ºò£¬Ç§Íò²»Òª°Ñ,Ò²±£´æ½øÈ¥£¡²»È»ÊäÈëµÄÊ±ºò£¬·Ç³£²»ºÃ½â¾ö£¡-_-!
-	// ss >> x; »áÊ§°Ü£¡£¡ÓĞ¶ººÅ£¡£¡
+	// ä¿å­˜çš„æ—¶å€™ï¼Œåƒä¸‡ä¸è¦æŠŠ,ä¹Ÿä¿å­˜è¿›å»ï¼ä¸ç„¶è¾“å…¥çš„æ—¶å€™ï¼Œéå¸¸ä¸å¥½è§£å†³ï¼-_-!
+	// ss >> x; ä¼šå¤±è´¥ï¼ï¼æœ‰é€—å·ï¼ï¼
 // 	os<<"id: "<<stu.getId()<<", name: "<<stu.getName()<<", age: "
 // 		<<stu.getAge();
  

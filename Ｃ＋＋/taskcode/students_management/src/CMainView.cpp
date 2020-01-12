@@ -1,6 +1,7 @@
-
 #include "CMainView.h"
- 
+#include "command.h"
+//#define CLS (IS_WINDOWS == 0?"cls" : "clear") 
+//#define PAUSE (IS_WINDOWS == 0?"pause" : "read -n 1")
 CMainView::CMainView()
 {
 }
@@ -9,52 +10,52 @@ CMainView::~CMainView()
 {
 }
  
-/* ª∂”≠ */
+/* Ê¨¢Ëøé */
 void CMainView:: welcome() {
-	system("cls");
-	std::cout<<"ª∂”≠¿¥µΩxxx¥ÛœµÕ≥"<<std::endl;
+	Command::cls();
+	std::cout<<"Ê¨¢ËøéÊù•Âà∞xxxÂ§ßÁ≥ªÁªü"<<std::endl;
 }
  
-/* œ‘ æ≤Àµ• */
+/* ÊòæÁ§∫ËèúÂçï */
 void CMainView:: showMenu() {
  
 	std::cout<<"\n";
-	std::cout<<"≤Ÿ◊˜≤Ω÷Ë"<<std::endl;
+	std::cout<<"Êìç‰ΩúÊ≠•È™§"<<std::endl;
  
-	std::cout<<"1. ¬º»Î"<<std::endl;
-	std::cout<<"2. –ﬁ∏ƒ"<<std::endl;
-	std::cout<<"3. ≤È’“"<<std::endl;
-	std::cout<<"4. …æ≥˝"<<std::endl;
-	std::cout<<"5. œ‘ æÀ˘”–"<<std::endl;
-	std::cout<<"6. ±£¥Ê÷¡Œƒº˛"<<std::endl;
-	std::cout<<"7. ¥”Œƒº˛µº»Î"<<std::endl;
-	std::cout<<"0. ÕÀ≥ˆ"<<std::endl;
+	std::cout<<"1. ÂΩïÂÖ•"<<std::endl;
+	std::cout<<"2. ‰øÆÊîπ"<<std::endl;
+	std::cout<<"3. Êü•Êâæ"<<std::endl;
+	std::cout<<"4. Âà†Èô§"<<std::endl;
+	std::cout<<"5. ÊòæÁ§∫ÊâÄÊúâ"<<std::endl;
+	std::cout<<"6. ‰øùÂ≠òËá≥Êñá‰ª∂"<<std::endl;
+	std::cout<<"7. ‰ªéÊñá‰ª∂ÂØºÂÖ•"<<std::endl;
+	std::cout<<"0. ÈÄÄÂá∫"<<std::endl;
 	std::cout<<"\n";
  
-	std::cout<<"Author£∫qcy"<<std::endl;
+	std::cout<<"AuthorÔºöqcy"<<std::endl;
 	std::cout<<"2016/11/28"<<std::endl;
  
 	std::cout<<"\n";
-	std::cout<<"«Î—°‘Ò≤Ÿ◊˜£∫";
+	std::cout<<"ËØ∑ÈÄâÊã©Êìç‰ΩúÔºö";
 }
  
  
-/* view œ‘ æÀ˘”–—ß…˙ */
+/* view ÊòæÁ§∫ÊâÄÊúâÂ≠¶Áîü */
 void CMainView:: showAllStuAtView(const std::map<int, CStudent> & stu_m1 )
 {
  
-	system("cls");
+	//Command::cls();
 	std::cout<<"id    |"<<"name  |"<<"age"<<std::endl;
 	CStudentMg cStuMg;
 	cStuMg.showAll(stu_m1);
  
-	system("pause");
-	system("cls");
+	Command::pause();
+	//Command::cls();
 	welcome();
 	showMenu();
 }
  
-/* view≤„ ÃÌº”“ª∏ˆ—ß…˙ */
+/* viewÂ±Ç Ê∑ªÂä†‰∏Ä‰∏™Â≠¶Áîü */
 void  CMainView:: addStuAtView( std::map<int, CStudent> & stu_m1 )
 {
 	CStudentMg cStuMg;
@@ -64,9 +65,9 @@ void  CMainView:: addStuAtView( std::map<int, CStudent> & stu_m1 )
 	int age;
 	CStudent cStu;
  
-	system("cls");
+	Command::cls();
  
-	std::cout<<"¬º»Î\n";
+	std::cout<<"ÂΩïÂÖ•\n";
 	std::cout<<"id:";
 	std::cin>>id;
  
@@ -80,21 +81,21 @@ void  CMainView:: addStuAtView( std::map<int, CStudent> & stu_m1 )
 	cStu.setName(name);
 	cStu.setAge(age);
  
-	// ±£¥Ê
+	// ‰øùÂ≠ò
 	cStuMg.addAStu(stu_m1,cStu);
  
-	system("cls");
+	//Command::cls();
 	welcome();
 	showMenu();
 }
  
  
  
-/* view ≤È’““ª∏ˆ—ß…˙ */
+/* view Êü•Êâæ‰∏Ä‰∏™Â≠¶Áîü */
 void  CMainView::  findStuAtView(const std::map<int, CStudent> & m1) {
  
-	system("cls");
-	std::cout<<"«Î ‰»Î“™≤È’“—ß…˙µƒid"<<std::endl;
+	//Command::cls();
+	std::cout<<"ËØ∑ËæìÂÖ•Ë¶ÅÊü•ÊâæÂ≠¶ÁîüÁöÑid"<<std::endl;
 	int id;
 	std::cin>>id;
  
@@ -108,21 +109,21 @@ void  CMainView::  findStuAtView(const std::map<int, CStudent> & m1) {
 	}
 	else
 	{
-		std::cout<<"≤ÈŒﬁ¥À»À"<<std::endl;
+		std::cout<<"Êü•Êó†Ê≠§‰∫∫"<<std::endl;
 	}
  
-	system("pause");
-	system("cls");
+	Command::pause();
+	//Command::cls();
 	welcome();
 	showMenu();
  
 }
  
-/* view≤„…æ≥˝“ª∏ˆ—ß…˙ */
+/* viewÂ±ÇÂà†Èô§‰∏Ä‰∏™Â≠¶Áîü */
 void   CMainView:: deleteByIdAtView(std::map<int, CStudent> & v1) {
  
-	system("cls");
-	std::cout<<"«Î ‰»Î“™…æ≥˝µƒ—ß…˙µƒid"<<std::endl;
+	Command::cls();
+	std::cout<<"ËØ∑ËæìÂÖ•Ë¶ÅÂà†Èô§ÁöÑÂ≠¶ÁîüÁöÑid"<<std::endl;
 	int id;
 	std::cin>>id;
  
@@ -131,25 +132,25 @@ void   CMainView:: deleteByIdAtView(std::map<int, CStudent> & v1) {
  
 	if (b)
 	{
-		std::cout<<"…æ≥˝≥…π¶"<<std::endl;
+		std::cout<<"Âà†Èô§ÊàêÂäü"<<std::endl;
 	}
 	else {
-		std::cout<<"≤ÈŒﬁ¥À»À"<<std::endl;
+		std::cout<<"Êü•Êó†Ê≠§‰∫∫"<<std::endl;
 	}
  
-	system("pause");
-	system("cls");
+	Command::pause();
+	//Command::cls();
 	welcome();
 	showMenu();
  
 }
  
-/* view≤„ ∏¸–¬“ª∏ˆ—ß…˙ */
+/* viewÂ±Ç Êõ¥Êñ∞‰∏Ä‰∏™Â≠¶Áîü */
 void   CMainView:: updateByIdAtView(std::map<int, CStudent> & m1) {
  
-	system("cls");
+	Command::cls();
  
-	std::cout<<"«Î ‰»Î“™–ﬁ∏ƒµƒ—ß…˙µƒid"<<std::endl;
+	std::cout<<"ËØ∑ËæìÂÖ•Ë¶Å‰øÆÊîπÁöÑÂ≠¶ÁîüÁöÑid"<<std::endl;
 	int id;
 	std::cin>>id;
 	std::string name;
@@ -173,62 +174,62 @@ void   CMainView:: updateByIdAtView(std::map<int, CStudent> & m1) {
 	if (cStu2.getId()!=-1)
 	{
 		std::cout<<cStu2<<std::endl;
-		std::cout<<"–ﬁ∏ƒ≥…π¶"<<std::endl;
+		std::cout<<"‰øÆÊîπÊàêÂäü"<<std::endl;
 	}
 	else
 	{
-		std::cout<<"≤ÈŒﬁ¥À»À"<<std::endl;
+		std::cout<<"Êü•Êó†Ê≠§‰∫∫"<<std::endl;
 	}
  
-	system("pause");
-	system("cls");
+	Command::pause();
+	//Command::cls();
 	welcome();
 	showMenu();
  
 }
  
-/* view≤„ ∞—vec±£¥ÊΩ¯Œƒº˛ */
+/* viewÂ±Ç Êäävec‰øùÂ≠òËøõÊñá‰ª∂ */
 void   CMainView:: saveToFileAtView(const std::map<int, CStudent> & m1, std::string pathName) {
  
 	if (m1.begin()==m1.end()) {
-		system("cls");
-		std::cout<<"ªπ√ª”–»Œ∫Œ—ß…˙–≈œ¢£¨Œﬁ∑®±£¥Ê"<<std::endl;
+		Command::cls();
+		std::cout<<"ËøòÊ≤°Êúâ‰ªª‰ΩïÂ≠¶Áîü‰ø°ÊÅØÔºåÊó†Ê≥ï‰øùÂ≠ò"<<std::endl;
 	}
 	else {
-		// ±£¥Ê
+		// ‰øùÂ≠ò
 		CStudentMg cStuMg;
 		bool b = cStuMg.saveToFile(m1,pathName);
 		if (b) {
-			system("cls");
-			std::cout<<"±£¥Ê≥…π¶"<<std::endl;
+			Command::cls();
+			std::cout<<"‰øùÂ≠òÊàêÂäü"<<std::endl;
 		}
 		else  {
-			std::cout<<"±£¥Ê ß∞‹"<<std::endl;
+			std::cout<<"‰øùÂ≠òÂ§±Ë¥•"<<std::endl;
 		}
 	}
  
-	system("pause");
-	system("cls");
+	Command::pause();
+	//Command::cls();
 	welcome();
 	showMenu();
  
 }
  
-/* view≤„ ∞—Œƒº˛÷–µƒ∂´Œ˜µº»Î vec */
+/* viewÂ±Ç ÊääÊñá‰ª∂‰∏≠ÁöÑ‰∏úË•øÂØºÂÖ• vec */
 void  CMainView::  readFromFileAtView(std::map<int, CStudent> & m, std::string pathName) {
  
-	system("cls");
+	Command::cls();
  
 	CStudentMg cStuMg;
 	bool b = cStuMg.readFromFile(m,pathName);
 	if (b){
-		std::cout<<"∂¡»°≥…π¶"<<std::endl;
+		std::cout<<"ËØªÂèñÊàêÂäü"<<std::endl;
 	}
 	else {
-		std::cout<<"∂¡»° ß∞‹"<<std::endl;
+		std::cout<<"ËØªÂèñÂ§±Ë¥•"<<std::endl;
 	}
-	system("pause");
-	system("cls");
+	Command::pause();
+	//Command::cls();
 	welcome();
 	showMenu();
 }

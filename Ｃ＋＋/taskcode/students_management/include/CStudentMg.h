@@ -10,16 +10,16 @@ public:
 	CStudentMg();
 	~CStudentMg();
  
-	// Ôö
+	// å¢ž
 	CStudent addAStu(std::map<int,CStudent> & m1,CStudent & stu);
  
-	// É¾
+	// åˆ 
 	bool deleteStuById(std::map<int, CStudent> & m1,const int & id);
  
-	// ¸Ä
+	// æ”¹
 	CStudent updateStu(std::map<int, CStudent> & m1, const CStudent & stu);
  
-	// ²é by id
+	// æŸ¥ by id
 	CStudent findById(const std::map<int, CStudent> & m1, const int & id) const;
 	
 	

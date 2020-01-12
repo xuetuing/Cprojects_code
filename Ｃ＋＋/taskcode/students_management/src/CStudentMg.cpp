@@ -16,15 +16,15 @@ CStudentMg::~CStudentMg()
 {
 }
  
-// Ôö
+// å¢
 CStudent CStudentMg:: addAStu(map<int,CStudent> & m1,CStudent & stu) {
 	
-	// ÏÈ¼ÙÉèid¿ÉÒÔÖØ¸´ÁË
+	// å…ˆå‡è®¾idå¯ä»¥é‡å¤äº†
 	m1.insert(make_pair(stu.getId(),stu));
 	return stu;
 }
  
-// É¾
+// åˆ 
 bool  CStudentMg:: deleteStuById(map<int, CStudent> & m1, const int & id) {
  
 	bool b = false;
@@ -34,18 +34,18 @@ bool  CStudentMg:: deleteStuById(map<int, CStudent> & m1, const int & id) {
 	if (iter!=m1.end())
 	{
 		m1.erase(iter);
-		b = true; // É¾³ı³É¹¦
+		b = true; // åˆ é™¤æˆåŠŸ
 	}
 	
 	return b;
 }
  
-// ¸Ä
+// æ”¹
 CStudent CStudentMg:: updateStu(map<int,CStudent> & m1,const CStudent & cStu) {
  
-	// µü´úÆ÷ÊÇÒ»¸ösmart point£¡
-	// ÊÇ¿ÉÒÔÍ¨¹ıµü´úÆ÷È¥·ÃÎÊµ½ m1ÀïµÄ¶«Î÷£¬²¢ÇÒ×ö³öĞŞ¸ÄµÄ£¡
-	// ³ı·Çµü´úÆ÷ÊÇconstµü´úÆ÷
+	// è¿­ä»£å™¨æ˜¯ä¸€ä¸ªsmart pointï¼
+	// æ˜¯å¯ä»¥é€šè¿‡è¿­ä»£å™¨å»è®¿é—®åˆ° m1é‡Œçš„ä¸œè¥¿ï¼Œå¹¶ä¸”åšå‡ºä¿®æ”¹çš„ï¼
+	// é™¤éè¿­ä»£å™¨æ˜¯constè¿­ä»£å™¨
  
 	CStudent stu;
 	int id = cStu.getId();
@@ -54,15 +54,15 @@ CStudent CStudentMg:: updateStu(map<int,CStudent> & m1,const CStudent & cStu) {
 	iter = m1.find(id);
 	if (iter!=m1.end())
 	{
-		// ĞŞ¸Ä
+		// ä¿®æ”¹
 		iter->second = cStu;
-		stu = cStu; // °ÑĞŞ¸ÄºóµÄ¶ÔÏó£¬¸³Öµ£¬ÔÙ·µ»ØÉÏ²ã
+		stu = cStu; // æŠŠä¿®æ”¹åçš„å¯¹è±¡ï¼Œèµ‹å€¼ï¼Œå†è¿”å›ä¸Šå±‚
 	}
  
 	return stu;
 }
  
-// ²é by id
+// æŸ¥ by id
 CStudent  CStudentMg:: findById(const map <int, CStudent> & m1, const int & id) const{
  
 	CStudent stu ;
@@ -92,12 +92,12 @@ bool CStudentMg::saveToFile(const map <int,CStudent> & m1,const string & pathNam
  
 	bool b = true;
  
-	//fstream ofs(pathName,ios::out+ios::binary); // ÎªÊ²Ã´²»ÊÇÒÔbinary±£´æ£¿
+	//fstream ofs(pathName,ios::out+ios::binary); // ä¸ºä»€ä¹ˆä¸æ˜¯ä»¥binaryä¿å­˜ï¼Ÿ
 	fstream ofs(pathName,ios::out);
 	if (ofs) {
 		stringstream ss;
  
-		cout<<"ÎÄ¼ş´ò¿ª"<<endl;
+		cout<<"æ–‡ä»¶æ‰“å¼€"<<endl;
 		
 		CStudent stu;
 		for (auto p = m1.begin();p!=m1.end();p++)
@@ -106,13 +106,13 @@ bool CStudentMg::saveToFile(const map <int,CStudent> & m1,const string & pathNam
 			ss<<stu<<endl;
 		}
 		
-		ofs<<ss.str(); // ×¢Òâ£¬Êä³öÒ»¶¨ÊÇ ss.str();
+		ofs<<ss.str(); // æ³¨æ„ï¼Œè¾“å‡ºä¸€å®šæ˜¯ ss.str();
 		
 		ofs.close();
 	}
 	else
 	{
-		cout<<"ÎÄ¼ş´ò¿ªÊ§°Ü"<<endl;
+		cout<<"æ–‡ä»¶æ‰“å¼€å¤±è´¥"<<endl;
 		b = false;
 	}
  
@@ -124,14 +124,14 @@ bool CStudentMg::saveToFile(const map <int,CStudent> & m1,const string & pathNam
 bool CStudentMg:: readFromFile(std::map<int,CStudent> & m1, std::string path) {
 	bool b = true;
  
-	m1.clear(); // ÇåµôÔ­À´µÄ
+	m1.clear(); // æ¸…æ‰åŸæ¥çš„
 	
 	fstream ifs(path,ios::in);
 	if (ifs) {
-		cout<<"ÎÄ¼ş´ò¿ª"<<endl;
+		cout<<"æ–‡ä»¶æ‰“å¼€"<<endl;
 		string s;
 		stringstream ss;
-		while (getline(ifs,s)) // ÔõÃ´Ò»ĞĞĞĞµØ¶ÁÈ¡£¿
+		while (getline(ifs,s)) // æ€ä¹ˆä¸€è¡Œè¡Œåœ°è¯»å–ï¼Ÿ
 		{
 			CStudent cStu;
 			ss<<s;
@@ -147,7 +147,7 @@ bool CStudentMg:: readFromFile(std::map<int,CStudent> & m1, std::string path) {
  
 	}
 	else {
-		cout<<"ÎÄ¼ş´ò¿ªÊ§°Ü"<<endl;
+		cout<<"æ–‡ä»¶æ‰“å¼€å¤±è´¥"<<endl;
 		b = false;
 	}
  
