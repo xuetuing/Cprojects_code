@@ -5,6 +5,8 @@
 #include <sstream>
 #include "CStudent.h"
 #include "CStudentMg.h"
+#include <typeinfo>
+
  
 using namespace std;
  
@@ -82,8 +84,9 @@ void  CStudentMg:: showAll(const map<int,CStudent> & m1) const{
  
 	for (auto p : m1)
 	{
-		cout<<p.second<<endl;
-	}
+		//cout<<p.second<<endl;
+        p.second.toString();
+    }
 	
 }
  

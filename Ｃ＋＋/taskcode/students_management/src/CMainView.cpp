@@ -45,7 +45,7 @@ void CMainView:: showAllStuAtView(const std::map<int, CStudent> & stu_m1 )
 {
  
 	//Command::cls();
-	std::cout<<"id    |"<<"name  |"<<"age"<<std::endl;
+	std::cout<<"Id    |"<<"Name    |"<<"Age    |"<<"Chinese    |"<<"Math    |"<<"English    |"<<"Politics    |"<<"Sum    |"<<"Average    "<<std::endl;
 	CStudentMg cStuMg;
 	cStuMg.showAll(stu_m1);
  
@@ -63,24 +63,40 @@ void  CMainView:: addStuAtView( std::map<int, CStudent> & stu_m1 )
 	int id; 
 	std::string name;
 	int age;
+    int scores[CLASSES];
+    
 	CStudent cStu;
  
 	Command::cls();
  
 	std::cout<<"录入\n";
-	std::cout<<"id:";
+	std::cout<<"Id:";
 	std::cin>>id;
  
-	std::cout<<"name:";
+	std::cout<<"Name:";
 	std::cin>>name;
  
-	std::cout<<"age:";
+	std::cout<<"Age:";
 	std::cin>>age;
+
+    std::cout<<"Chinese:";
+	std::cin>>scores[0];
+
+    std::cout<<"Math:";
+	std::cin>>scores[1];
+
+    std::cout<<"Englist:";
+	std::cin>>scores[2];
+
+    std::cout<<"Politics:";
+	std::cin>>scores[3];
  
 	cStu.setId(id);
 	cStu.setName(name);
 	cStu.setAge(age);
- 
+    cStu.setScores(scores, CLASSES);
+    cStu.setSum(111);
+    cStu.setAverage(111);
 	// 保存
 	cStuMg.addAStu(stu_m1,cStu);
  
@@ -154,15 +170,35 @@ void   CMainView:: updateByIdAtView(std::map<int, CStudent> & m1) {
 	int id;
 	std::cin>>id;
 	std::string name;
+    int age;
+    int scores[CLASSES];
+    char flag = 'n';
+
+    CStudent cStu;
  
-	std::cout<<"name:";
+	std::cout<<"Name:";
 	std::cin>>name;
- 
-	int age;
-	std::cout<<"age:";
+	
+	std::cout<<"Age:";
 	std::cin>>age;
- 
-	CStudent cStu;
+
+    std::cout<<"update the scores(y/n)?: ";
+    std::cin>>flag;
+    if(flag == 'y') {
+        std::cout<<"Chinese:";
+        std::cin>>scores[0];
+
+        std::cout<<"Math:";
+        std::cin>>scores[1];
+
+        std::cout<<"Englist:";
+        std::cin>>scores[2];
+
+        std::cout<<"Politics:";
+        std::cin>>scores[3];
+
+        cStu.setScores(scores, CLASSES);
+    }
 	cStu.setId(id);
 	cStu.setName(name);
 	cStu.setAge(age);
